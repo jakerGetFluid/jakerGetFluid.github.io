@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var watch = require('gulp-watch');
 
 var sassPaths = [
   'bower_components/normalize.scss/sass',
@@ -20,6 +21,8 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('default', ['sass'], function() {
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+gulp.task('watch', function () {
+  gulp.watch('scss/*.scss', ['sass']);
 });
+
+gulp.task('default', ['sass', 'watch']);

@@ -1,0 +1,45 @@
+body {
+  main.main {
+    position: relative;
+  }
+  section.hero {
+    position: relative;
+    height: 100vh;
+    .title {
+      position: absolute;
+      top: 75%;
+      left: -40px;
+      width: 75%;
+      padding: 30px 20px;
+      @include breakpoint(medium) {
+        padding: 50px 40px;
+      }
+      @include breakpoint(large) {
+        padding: 40px 60px;
+      }
+      > .row {
+        position: relative;
+        z-index: 10;
+      }
+      &::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $light-blue;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        box-shadow: 1px 1px 2px $dark-blue;
+        transform: skew(-18deg);
+        z-index: 9;
+      }
+    }
+  }
+  section.intro {
+    height: 50vh;
+    position: relative;
+    background: $orange;
+  }
+}
