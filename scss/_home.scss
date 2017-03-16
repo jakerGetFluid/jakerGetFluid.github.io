@@ -5,41 +5,114 @@ body {
   section.hero {
     position: relative;
     height: 100vh;
-    .title {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    &::after {
+      content: '';
       position: absolute;
-      top: 75%;
-      left: -40px;
-      width: 75%;
-      padding: 30px 20px;
-      @include breakpoint(medium) {
-        padding: 50px 40px;
-      }
-      @include breakpoint(large) {
-        padding: 40px 60px;
-      }
-      > .row {
-        position: relative;
-        z-index: 10;
-      }
-      &::after {
-        content: '';
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: $light-blue;
-        border-top-right-radius: 50px;
-        border-bottom-right-radius: 50px;
-        box-shadow: 1px 1px 2px $dark-blue;
-        transform: skew(-18deg);
-        z-index: 9;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: .5;
+      animation: static 5s infinite;
+      background: {
+        image: url('/assets/silhouette-y-outline.png');
+        size: 500px;
+        repeat: no-repeat;
+        attachment: fixed;
+        position: center center;
       }
     }
-  }
-  section.intro {
-    height: 50vh;
-    position: relative;
-    background: $orange;
+    // static flicker
+    @keyframes static {
+      0% {
+        background-position: center center;
+        opacity: .6;
+      }
+      19% {
+        opacity: .7;
+      }
+      20% {
+        opacity: .8;
+      }
+      20.5% {
+        opacity: .7;
+      }
+      21% {
+        opacity: .6;
+      }
+      24% {
+        transform: skewX(0deg), skewY(0deg);
+      }
+      25% {
+        transform: skewX(2deg), skewY(1deg);
+      }
+      26% {
+        transform: skewX(0deg), skewY(0deg);
+      }
+      47% {
+        opacity: .6;
+      }
+      48% {
+        opacity: .8;
+        background-position: center center;
+      }
+      49% {
+        opacity: .5;
+        background-position: 45% center;
+        transform: skewX(0deg);
+      }
+      49.5% {
+        transform: skewX(-7deg);
+      }
+      50% {
+        opacity: .8;
+        transform: skewX(-5deg);
+      }
+      50.5% {
+        opacity: .3;
+        transform: skewX(0deg);
+      }
+      51% {
+        opacity: .6;
+        background-position: center center;
+      }
+      72% {
+        opacity: .6;
+        transform: skewY(0deg);
+      }
+      72.5% {
+        transform: skewY(6deg);
+      }
+      73% {
+        opacity: .3;
+        transform: skewY(5deg);
+      }
+      74% {
+        opacity: .7;
+        transform: skewY(0deg);
+      }
+      75% {
+        opacity: .6;
+      }
+      100% {
+        opacity: .6;
+        background-position: center center;
+      }
+    }
+    .title {
+      padding: 20px;
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 2rem;
+        font-family: $body-font-family;
+      }
+    }
   }
 }
