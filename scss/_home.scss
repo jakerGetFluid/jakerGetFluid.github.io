@@ -26,7 +26,7 @@ body {
       }
       background-size: 300px;
       @include breakpoint(medium) {
-        background-size: 350px;
+        background-size: 450px;
       }
       @include breakpoint(large) {
         background-size: 500px;
