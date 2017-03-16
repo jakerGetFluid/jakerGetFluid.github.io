@@ -20,10 +20,16 @@ body {
       animation: static 5s infinite;
       background: {
         image: url('/assets/silhouette-y-outline.png');
-        size: 500px;
         repeat: no-repeat;
         attachment: fixed;
         position: center center;
+      }
+      background-size: 300px;
+      @include breakpoint(medium) {
+        background-size: 350px;
+      }
+      @include breakpoint(large) {
+        background-size: 500px;
       }
     }
     // static flicker
