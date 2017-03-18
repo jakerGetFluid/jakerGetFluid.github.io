@@ -4,3 +4,5 @@ $(document).foundation();
 $('.menu-toggle').click(function() {
   $('header').toggleClass('active');
 });
+
+$('.hero .title').headroom();

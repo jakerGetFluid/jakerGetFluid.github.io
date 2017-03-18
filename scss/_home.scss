@@ -43,21 +43,17 @@ body {
       }
       20% {
         opacity: .8;
+        transform: skewX(0deg);
       }
       20.5% {
         opacity: .7;
+        transform: skewX(5deg);
       }
       21% {
         opacity: .6;
+        transform: skewX(0deg);
       }
-      24% {
-        transform: skewX(0deg), skewY(0deg);
-      }
-      25% {
-        transform: skewX(2deg), skewY(1deg);
-      }
-      26% {
-        transform: skewX(0deg), skewY(0deg);
+      22% {
       }
       47% {
         opacity: .6;
@@ -97,11 +93,11 @@ body {
         opacity: .3;
         transform: skewY(5deg);
       }
-      74% {
+      73.5% {
         opacity: .7;
         transform: skewY(0deg);
       }
-      75% {
+      74% {
         opacity: .6;
       }
       100% {
@@ -110,7 +106,9 @@ body {
       }
     }
     .title {
+      position: fixed;
       padding: 20px;
+      transition: opacity .2s ease;
       h1 {
         font-size: 3rem;
         margin-bottom: 0;
@@ -118,6 +116,24 @@ body {
       h2 {
         font-size: 2rem;
         font-family: $body-font-family;
+      }
+      &.headroom--unpinned {
+        opacity: .5;
+      }
+    }
+  }
+  section.about {
+    padding: rem-calc(400) 0;
+    position: relative;
+    .snowflake {
+      height: 100%;
+      width: 100%;
+      opacity: .1;
+      background: {
+        image: url('/assets/flake-w.svg');
+        size: contain;
+        position: center center;
+        repeat: no-repeat;
       }
     }
   }
