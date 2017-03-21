@@ -21,6 +21,7 @@ $('.ss').click(function() {
 $('.hero .title').headroom();
 
 // waypoints fades
+// hero section fade out
 $('section.about').waypoint(function(direction) {
     if (direction == 'down') {
       $('.hero').addClass('fade-out');
@@ -32,6 +33,7 @@ $('section.about').waypoint(function(direction) {
     offset: '20%'
   });
 
+//about section fade in
 $('a[name="about"]').waypoint(function(direction) {
   if (direction == 'down') {
     $('section.about').addClass('fade-in');
@@ -40,5 +42,5 @@ $('a[name="about"]').waypoint(function(direction) {
     $('section.about').removeClass('fade-in');
   }
   }, {
-    offset: '55%'
+    offset: '40%'
 });
