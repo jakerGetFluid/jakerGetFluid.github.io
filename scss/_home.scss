@@ -1,6 +1,9 @@
 body {
   main.main {
     position: relative;
+    p, li, div, a, span {
+      font-size: rem-calc(18);
+    }
   }
   section.hero {
     position: relative;
@@ -17,7 +20,7 @@ body {
       height: 100%;
       width: 100%;
       opacity: .5;
-      transition: background-size .5s ease;
+      transition: height 1s ease;
       transform: scaleX(1);
       animation: static 5s infinite;
       background: {
@@ -26,12 +29,20 @@ body {
         attachment: fixed;
         position: center center;
       }
-      background-size: 300px;
+      background-size: 300px auto;
       @include breakpoint(medium) {
-        background-size: 450px;
+        background-size: 450px auto;
       }
       @include breakpoint(large) {
-        background-size: 500px;
+        background-size: 500px auto;
+      }
+    }
+    //waypoints fade out on scroll
+    &.fade-out {
+      &::after {
+        height: 0;
+        animation: none;
+        // background-size: 500px 1px;
       }
     }
     // static flicker
@@ -110,39 +121,105 @@ body {
     .title {
       position: fixed;
       padding: 20px;
-      transition: opacity .2s ease;
+      transition: opacity .3s ease, transform .3s ease;
       h1 {
         font-size: 3rem;
         margin-bottom: 0;
+        span {
+          font-size: inherit;
+          i, b {
+            display: inline-block;
+            font-style: normal;
+            position: relative;
+          }
+          i {
+            transition: transform .4s ease, opacity .4s ease;
+          }
+          b.r {
+            transition: transform .5s ease;
+          }
+        }
       }
       h2 {
         font-size: 2rem;
         font-family: $body-font-family;
       }
-      &.headroom--unpinned {
-        opacity: .5;
-      }
-    }
-    //waypoints fade out on scroll
-    &.fade-out {
-      &::after {
-        background-size: 0px;
+      &.headroom--not-top {
+        // hide when not at top - mobile
+        opacity: 0;
+        // anywhere not top
+        @include breakpoint(medium) {
+          opacity: .8;
+          transform: translateY(68px);
+        }
+        // scrolling down
+        &.headroom--unpinned {
+          @include breakpoint(medium) {
+            opacity: .2;
+            h1 {
+              span {
+                i {
+                  transform: translateY(20px);
+                  opacity: 0;
+                }
+                b.r {
+                  transform: translateX(-70px);
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
   section.about {
-    padding: rem-calc(400) 0;
+    height: 100vh;
+    @include breakpoint(medium) {
+      height: 200vh;
+    }
+    @include breakpoint(large) {
+      height: 300vh;
+    }
+    display: flex;
+    align-items: center;
     position: relative;
+    overflow: hidden;
     .snowflake {
+      position: absolute;
+      transition: opacity .3s ease-in-out;
+      top: 0;
+      right: -50%;
       height: 100%;
       width: 100%;
-      opacity: .1;
-      background: {
-        image: url('/assets/flake-w.svg');
-        size: contain;
-        position: center center;
-        repeat: no-repeat;
+      opacity: .02;
+    }
+    .bio-wrap {
+      position: relative;
+      opacity: 0;
+      padding: 3rem 0;
+      transform: translateX(-60px);
+      transition: opacity .4s ease, transform .5s ease;
+    }
+    &.fade-in {
+      .snowflake {
+        opacity: .05;
       }
+      .bio-wrap {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @include breakpoint(medium) {
+      h2 {
+        position: absolute;
+        left: -220px;
+        top: 50%;
+        transform: translateY(-59%) rotate(-90deg);
+      }
+    }
+    a[name='about'] {
+      position: relative;
+      top: -200px;
     }
   }
 }
