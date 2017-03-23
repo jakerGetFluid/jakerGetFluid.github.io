@@ -50,5 +50,7 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import './scss/mixins/_cutout-animation.scss';
+@import './scss/mixins/_static-animation.scss';
 @import './scss/_home.scss';
 @import './scss/_nav.scss';

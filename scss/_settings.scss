@@ -59,15 +59,15 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fff;
+$black: #070707;
+$white: #fafafa;
 $off-white: #feeed5;
 $basic-gray: #514947;
 // main gray ^
 $med-brown: #766151;
 $dark-brown: #48372f;
 $yellow: #fee202;
-$body-background: #1A1A1A;
+$body-background: $black;
 $body-font-color: $white;
 $body-font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;

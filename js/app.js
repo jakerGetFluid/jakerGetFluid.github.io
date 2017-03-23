@@ -25,22 +25,12 @@ $('.hero .title').headroom();
 $('section.about').waypoint(function(direction) {
     if (direction == 'down') {
       $('.hero').addClass('fade-out');
+      $('section.about').addClass('fade-in');
     }
     else {
       $('.hero').removeClass('fade-out');
+      $('section.about').removeClass('fade-in');
     }
   }, {
     offset: '20%'
   });
-
-//about section fade in
-$('a[name="about"]').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('section.about').addClass('fade-in');
-  }
-  else {
-    $('section.about').removeClass('fade-in');
-  }
-  }, {
-    offset: '40%'
-});

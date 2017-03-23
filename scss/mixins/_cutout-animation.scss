@@ -1,0 +1,138 @@
+@keyframes cutout {
+  0% {
+    opacity: 1;
+    transform: skew(0deg, 0deg);
+  }
+  1% {
+    opacity: .5;
+  }
+  5% {
+    opacity: .5;
+    transform: skew(0deg, 0deg);
+  }
+  6% {
+    opacity: .8;
+  }
+  10% {
+    opacity: .6;
+    transform: skew(5deg, 0deg);
+  }
+  10.5% {
+    opacity: .4;
+    transform: skew(0deg, 0deg);
+  }
+  19.5% {
+    opacity: .4;
+    transform: skew(0deg, 0deg);
+  }
+  20% {
+    opacity: .6;
+    transform: skew(12deg, 0deg);
+  }
+  21% {
+    opacity: .3;
+    transform: skew(0deg, 0deg);
+  }
+  24% {
+    opacity: .3;
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    opacity: .6;
+    transform: skew(5deg, 8deg);
+  }
+  26.5% {
+    opacity: .5;
+    transform: skew(0deg, 10deg);
+  }
+  27% {
+    opacity: .6;
+    transform: skew(0deg, 0deg);
+  }
+  35% {
+    opacity: .6;
+  }
+  35.5% {
+    opacity: .2;
+  }
+  36% {
+    opacity: .6;
+  }
+  49% {
+    opacity: .3;
+  }
+  49.5% {
+    opacity: .3;
+    transform: skew(0deg, 0deg);
+  }
+  50% {
+    opacity: .7;
+    transform: skew(20deg, 10deg);
+  }
+  51.5% {
+    opacity: .6;
+    transform: skew(0deg, 0deg);
+  }
+  64% {
+    opacity: .6;
+    transform: skew(0deg, 0deg);
+  }
+  64.5% {
+    opacity: .8;
+  }
+  65% {
+    opacity: .6;
+    transform: skew(40deg, 20deg);
+  }
+  70% {
+    opacity: .6;
+  }
+  75% {
+    opacity: .6;
+  }
+  76% {
+    opacity: .4;
+    transform: skew(0deg, 20deg);
+  }
+  76.5% {
+    opacity: .7;
+    transform: skew(0deg, 0deg);
+  }
+  77% {
+    opacity: .5;
+  }
+  79% {
+    opacity: .5;
+    transform: skew(0deg, 0deg);
+  }
+  90% {
+    opacity: .5;
+    transform: skew(20deg, 40deg);
+  }
+  90.5% {
+    opacity: .9;
+    transform: skew(20deg, 20deg);
+  }
+  91% {
+    opacity: .5;
+    transform: skew(40deg, 20deg);
+  }
+  92% {
+    opacity: .7;
+    transform: skew(0deg, 0deg);
+  }
+  93% {
+    opacity: .5;
+  }
+  98% {
+    opacity: .5;
+  }
+  99% {
+    transform: skew(0deg, 0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: skew(5deg, 0deg);
+    opacity: 0;
+  }
+}
