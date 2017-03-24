@@ -3,7 +3,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     transform: translateY(0);
@@ -13,11 +13,20 @@
 @keyframes shadow-bounce {
   from {
     width: 200px;
+    @include breakpoint(medium) {
+      width: 300px;
+    }
   }
   50% {
-    width: 190px;
+    width: 185px;
+    @include breakpoint(medium) {
+      width: 285px;
+    }
   }
   to {
     width: 200px;
+    @include breakpoint(medium) {
+      width: 300px;
+    }
   }
 }

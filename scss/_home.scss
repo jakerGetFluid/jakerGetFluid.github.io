@@ -1,6 +1,7 @@
 body {
   main.main {
     position: relative;
+    // TYPOGRAPHY BASICS
     p, li, div, a, span {
       font-size: 1rem;
       @include breakpoint(medium) {
@@ -16,6 +17,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+    // BACKGROUND-IMAGE WITH FLICKER
     &::after {
       content: '';
       position: fixed;
@@ -40,13 +42,16 @@ body {
         background-size: 500px auto;
       }
     }
-    //waypoints fade out on scroll
+    // ****
+    // FADE TRANSITIONS
+    // ****
     &.fade-out {
       &::after {
         opacity: 0;
         animation: cutout .8s 1;
       }
     }
+    // NAME
     .title {
       position: fixed;
       bottom: 0;
@@ -76,8 +81,8 @@ body {
         font-size: 1.59rem;
         font-family: $body-font-family;
       }
+      // hide when not at top - mobile
       &.headroom--not-top {
-        // hide when not at top - mobile
         opacity: 0;
         // anywhere not top
         @include breakpoint(medium) {
@@ -111,6 +116,7 @@ body {
     @include breakpoint(large) {
       height: 200vh;
     }
+    // WRAP FOR TEXT AND TITLE
     .bars-wrap {
       position: fixed;
       display: flex;
@@ -155,6 +161,7 @@ body {
         color: $black;
       }
     }
+    // TEXT
     .top-wrap {
       right: -50px;
       bottom: -1px;
@@ -162,10 +169,17 @@ body {
       padding: 1rem 1rem 0 1rem;
       @include breakpoint(medium) {
         width: 70%;
+        font-size: rem-calc(18);
         padding: 5rem 5rem 0 5rem;
       }
       transition: right .5s .6s linear, height .4s ease;
+      p, a {
+        @include breakpoint(small only) {
+          font-size: .8rem;
+        }
+      }
     }
+    //TITLE
     .btm-wrap {
       right: -50px;
       top: -1px;
@@ -177,7 +191,9 @@ body {
       }
       transition: right .5s .6s linear, height .4s ease;
     }
-
+    // ****
+    // FADE TRANSITIONS
+    // ****
     &.fade-in {
       .bars-wrap {
         right: 0;
@@ -196,6 +212,7 @@ body {
       .top-wrap, .btm-wrap {
         right: 0;
       }
+      //TEXT
       .top-wrap {
         height: 400px;
         @include breakpoint(medium) {
@@ -209,6 +226,7 @@ body {
         }
         transition: right .5s 1.5s linear, height .4s 1.5s ease;
       }
+      // TITLE
       .btm-wrap {
         height: 70px;
         @include breakpoint(medium) {
@@ -220,6 +238,7 @@ body {
         transition: right .5s 1.5s linear, height .4s 1.5s ease;
       }
     }
+    //MOVE ANCHOR UP
     a[name='about'] {
       position: relative;
       top: -200px;
@@ -238,36 +257,211 @@ body {
       top: 50%;
       transform: translateY(-50%);
       transition: opacity 1s .5s ease;
+      .web-container, .icons-container {
+        animation: bounce 2s infinite;
+      }
+      // WEB GRAPHIC
       svg {
         opacity: 1;
-        max-width: 95%;
-        animation: bounce 2s infinite;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
         width: 300px;
         @include breakpoint(medium) {
           width: 600px;
         }
         @include breakpoint(large) {
-          width: 1000px;
+          width: 700px;
+        }
+        @include breakpoint(xxlarge) {
+          width: 800px;
         }
       }
+      //SHADOW
       &::after {
         content: '';
-        width: 200px;
         height: 10px;
-        background-color: rgba($white, .05);
+        background-color: rgba($white, .075);
         display: block;
         margin-top: 15px;
         border-radius: 50%;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 0px 1px 1px rgba($white, .05);
+        box-shadow: 0px 1px 1px rgba($white, .075);
         animation: shadow-bounce 2s infinite;
+        width: 200px;
+        @include breakpoint(medium) {
+          width: 300px;
+        }
+      }
+      // POSITION ICON CONTAINER OVER WEB GRAPHIC
+      .icons-container {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        //*****
+        //SKILLSET ICONS
+        //*****
+        > div {
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          display: inline-block;
+          background-color: $white;
+          border-radius: 50%;
+          color: $black;
+          opacity: 0;
+          transition: transform .2s ease, opacity .2s ease;
+          &.html {
+            top: -45px;
+            left: 131px;
+            @include breakpoint(medium) {
+              top: -27px;
+              left: 294px;
+            }
+            @include breakpoint(large) {
+              top: -37px;
+              left: 344px;
+            }
+            @include breakpoint(xxlarge) {
+              top: -40px;
+              left: 393px;
+            }
+          }
+          &.wordpress {
+            top: 96px;
+            right: -8px;
+            @include breakpoint(medium) {
+              top: 234px;
+              right: -1px;
+            }
+            @include breakpoint(large) {
+              top: 277px;
+              right: -6px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 323px;
+              right: 9px;
+            }
+          }
+          &.scss {
+            top: -12px;
+            left: 62px;
+            @include breakpoint(medium) {
+              top: 5px;
+              left: 162px;
+            }
+            @include breakpoint(large) {
+              top: 19px;
+              left: 196px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 23px;
+              left: 228px;
+            }
+          }
+          &.php {
+            top: 21px;
+            left: -7px;
+            @include breakpoint(medium) {
+              top: 71px;
+              left: -7px;
+            }
+            @include breakpoint(large) {
+              top: 90px;
+              left: 0px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 111px;
+              left: 0px;
+            }
+          }
+          &.javascript {
+            top: 99px;
+            left: -4px;
+            @include breakpoint(medium) {
+              top: 229px;
+              left: 13px;
+            }
+            @include breakpoint(large) {
+              top: 276px;
+              left: 20px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 317px;
+              left: 27px;
+            }
+          }
+          &.jquery {
+            top: 151px;
+            left: 53px;
+            @include breakpoint(medium) {
+              top: 295px;
+              left: 114px;
+            }
+            @include breakpoint(large) {
+              top: 346px;
+              left: 121px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 390px;
+              left: 141px;
+            }
+          }
+          &.illustrator {
+            top: -5px;
+            right: 28px;
+            @include breakpoint(medium) {
+              top: 22px;
+              right: 76px;
+            }
+            @include breakpoint(large) {
+              top: 30px;
+              right: 93px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 39px;
+              right: 117px;
+            }
+          }
+          &.photoshop {
+            top: 48px;
+            right: 30px;
+            @include breakpoint(medium) {
+              top: 93px;
+              right: 98px;
+            }
+            @include breakpoint(large) {
+              top: 117px;
+              right: 124px;
+            }
+            @include breakpoint(xxlarge) {
+              top: 136px;
+              right: 149px;
+            }
+          }
+        }
       }
     }
+    // ****
+    // FADE TRANSITIONS
+    // ****
     &.fade-in {
       transition: opacity 1s ease;
       .skill-web {
         opacity: 1;
+        .icons-container {
+          > div {
+            opacity: .75;
+            &:hover {
+              opacity: 1;
+              transform: scale(1.1);
+            }
+          }
+        }
       }
     }
   }
