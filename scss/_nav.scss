@@ -1,8 +1,12 @@
 header {
   position: fixed;
-  top: 20px;
-  left: 20px;
   z-index: 99;
+  top: 10px;
+  left: 15px;
+  @include breakpoint(medium) {
+    top: 20px;
+    left: 20px;
+  }
   .menu-toggle {
     position: relative;
     cursor: pointer;

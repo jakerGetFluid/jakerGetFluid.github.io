@@ -5,6 +5,10 @@ $('.menu-toggle').click(function() {
   $('header').toggleClass('active');
 });
 
+$('.off-menu ul li a').click(function() {
+  $('header').removeClass('active');
+});
+
 //smooth scroll
 $('.ss').click(function() {
   if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
@@ -21,7 +25,7 @@ $('.ss').click(function() {
 $('.hero .title').headroom();
 
 // waypoints fades
-// hero section fade out
+// hero section fade out, about fade in
 $('section.about').waypoint(function(direction) {
     if (direction == 'down') {
       $('.hero').addClass('fade-out');
@@ -34,3 +38,17 @@ $('section.about').waypoint(function(direction) {
   }, {
     offset: '20%'
   });
+
+  //about fade out, skillset fade in
+  $('section.skillset').waypoint(function(direction) {
+      if (direction == 'down') {
+        $('section.about').removeClass('fade-in');
+        $('section.skillset').addClass('fade-in');
+      }
+      else {
+        $('section.about').addClass('fade-in');
+        $('section.skillset').removeClass('fade-in')
+      }
+    }, {
+      offset: '20%'
+    });
