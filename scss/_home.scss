@@ -60,7 +60,9 @@ body {
           i, b {
             display: inline-block;
             font-style: normal;
+            font-weight: normal;
             position: relative;
+            text-transform: uppercase;
           }
           i {
             transition: transform .4s ease, opacity .4s ease;
@@ -71,8 +73,8 @@ body {
         }
       }
       h2 {
-        font-size: 2rem;
-        font-family: $body-font-family;
+        font-size: 1.75rem;
+        font-family: $header-font-family;
       }
       &.headroom--not-top {
         // hide when not at top - mobile

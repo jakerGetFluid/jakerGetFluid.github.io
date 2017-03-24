@@ -69,7 +69,7 @@ $dark-brown: #48372f;
 $yellow: #fee202;
 $body-background: $black;
 $body-font-color: $white;
-$body-font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Raleway', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -111,8 +111,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: 'Lobster', $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Oswald', $body-font-family;
+$header-font-weight: 500;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
