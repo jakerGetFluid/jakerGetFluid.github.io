@@ -66,7 +66,7 @@
       <a name="skillset"></a>
       <section class="skillset">
         <div class="skill-web">
-          <img src="/assets/flake-w.svg" class="snowflake">
+          <?php include('assets/abstract.svg'); ?>
         </div>
       </section>
     </main>

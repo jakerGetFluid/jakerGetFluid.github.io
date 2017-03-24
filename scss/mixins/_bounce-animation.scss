@@ -1,0 +1,23 @@
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow-bounce {
+  from {
+    width: 200px;
+  }
+  50% {
+    width: 190px;
+  }
+  to {
+    width: 200px;
+  }
+}
