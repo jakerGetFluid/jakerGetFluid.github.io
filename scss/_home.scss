@@ -255,27 +255,31 @@ body {
       opacity: 0;
       position: fixed;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: opacity 1s .5s ease;
-      .web-container, .icons-container {
-        animation: bounce 2s infinite;
+      @include breakpoint(medium) {
+        .web-container, .icons-container {
+          animation: bounce 2s infinite;
+        }
       }
       // WEB GRAPHIC
       svg {
         opacity: 1;
-        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
         display: block;
-        width: 300px;
+        width: 250px;
+        // max-width: 90%;
         @include breakpoint(medium) {
           width: 600px;
         }
         @include breakpoint(large) {
           width: 700px;
         }
-        @include breakpoint(xxlarge) {
-          width: 800px;
+        // HIDE DOTS WHERE ICONS ARE
+        .cls-200, .cls-205, .cls-202, .cls-208, .cls-210, .cls-212, .cls-214, .cls-217, .cls-219, .cls-223, .cls-234, .cls-236, .cls-241, .cls-245, .cls-247, .cls-251, .cls-276, .cls-281, .cls-288, .cls-292, .cls-293, .cls-298, .cls-300, .cls-309, .cls-324, .cls-330 {
+          opacity: 0;
         }
       }
       //SHADOW
@@ -289,10 +293,10 @@ body {
         margin-left: auto;
         margin-right: auto;
         box-shadow: 0px 1px 1px rgba($white, .075);
-        animation: shadow-bounce 2s infinite;
         width: 200px;
         @include breakpoint(medium) {
           width: 300px;
+          animation: shadow-bounce 2s infinite;
         }
       }
       // POSITION ICON CONTAINER OVER WEB GRAPHIC
@@ -317,131 +321,131 @@ body {
           transition: transform .2s ease, opacity .2s ease;
           &.html {
             top: -45px;
-            left: 131px;
+            left: 107px;
             @include breakpoint(medium) {
               top: -27px;
               left: 294px;
             }
             @include breakpoint(large) {
-              top: -37px;
+              top: -27px;
               left: 344px;
             }
-            @include breakpoint(xxlarge) {
-              top: -40px;
-              left: 393px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: -40px;
+            //   left: 393px;
+            // }
           }
           &.wordpress {
-            top: 96px;
-            right: -8px;
+            top: 88px;
+            right: -33px;
             @include breakpoint(medium) {
-              top: 234px;
-              right: -1px;
+              top: 257px;
+              right: -19px;
             }
             @include breakpoint(large) {
-              top: 277px;
-              right: -6px;
+              top: 301px;
+              right: -10px;
             }
-            @include breakpoint(xxlarge) {
-              top: 323px;
-              right: 9px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 323px;
+            //   right: 9px;
+            // }
           }
           &.scss {
-            top: -12px;
-            left: 62px;
+            top: -14px;
+            left: 38px;
             @include breakpoint(medium) {
-              top: 5px;
-              left: 162px;
+              top: 21px;
+              left: 146px;
             }
             @include breakpoint(large) {
               top: 19px;
               left: 196px;
             }
-            @include breakpoint(xxlarge) {
-              top: 23px;
-              left: 228px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 23px;
+            //   left: 228px;
+            // }
           }
           &.php {
-            top: 21px;
-            left: -7px;
+            top: 20px;
+            left: -32px;
             @include breakpoint(medium) {
-              top: 71px;
-              left: -7px;
+              top: 86px;
+              left: -17px;
             }
             @include breakpoint(large) {
-              top: 90px;
-              left: 0px;
+              top: 105px;
+              left: -21px;
             }
-            @include breakpoint(xxlarge) {
-              top: 111px;
-              left: 0px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 111px;
+            //   left: 0px;
+            // }
           }
           &.javascript {
-            top: 99px;
-            left: -4px;
+            top: 95px;
+            left: -25px;
             @include breakpoint(medium) {
-              top: 229px;
-              left: 13px;
+              top: 255px;
+              left: 0px;
             }
             @include breakpoint(large) {
-              top: 276px;
-              left: 20px;
+              top: 299px;
+              left: 4px;
             }
-            @include breakpoint(xxlarge) {
-              top: 317px;
-              left: 27px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 317px;
+            //   left: 27px;
+            // }
           }
           &.jquery {
-            top: 151px;
-            left: 53px;
+            top: 140px;
+            left: 27px;
             @include breakpoint(medium) {
-              top: 295px;
-              left: 114px;
+              top: 307px;
+              left: 74px;
             }
             @include breakpoint(large) {
-              top: 346px;
-              left: 121px;
+              top: 359px;
+              left: 90px;
             }
-            @include breakpoint(xxlarge) {
-              top: 390px;
-              left: 141px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 390px;
+            //   left: 141px;
+            // }
           }
           &.illustrator {
-            top: -5px;
-            right: 28px;
+            top: -6px;
+            right: 7px;
             @include breakpoint(medium) {
-              top: 22px;
-              right: 76px;
+              top: 32px;
+              right: 71px;
             }
             @include breakpoint(large) {
               top: 30px;
               right: 93px;
             }
-            @include breakpoint(xxlarge) {
-              top: 39px;
-              right: 117px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 39px;
+            //   right: 117px;
+            // }
           }
           &.photoshop {
             top: 48px;
-            right: 30px;
+            right: 7px;
             @include breakpoint(medium) {
-              top: 93px;
-              right: 98px;
+              top: 105px;
+              right: 83px;
             }
             @include breakpoint(large) {
-              top: 117px;
-              right: 124px;
+              top: 128px;
+              right: 104px;
             }
-            @include breakpoint(xxlarge) {
-              top: 136px;
-              right: 149px;
-            }
+            // @include breakpoint(xxlarge) {
+            //   top: 136px;
+            //   right: 149px;
+            // }
           }
         }
       }
