@@ -269,13 +269,7 @@ body {
         margin-left: auto;
         margin-right: auto;
         display: block;
-<<<<<<< HEAD
         width: 250px;
-        // max-width: 90%;
-=======
-        width: 300px;
-        max-width: 90%;
->>>>>>> 89cf98b74078d48187f64032fdd4fc554bbc3616
         @include breakpoint(medium) {
           width: 600px;
         }
