@@ -468,4 +468,29 @@ body {
       }
     }
   }
+  //SAMPLES
+  section.samples {
+    position: relative;
+    height: 200vh;
+    @include breakpoint(large) {
+      height: 200vh;
+    }
+    .samples-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+    // ****
+    // FADE TRANSITIONS
+    // ****
+    &.fade-in {
+      .samples-wrap {
+        opacity: 1;
+        transition: opacity 1s 1s ease;
+      }
+    }
+  }
 }
