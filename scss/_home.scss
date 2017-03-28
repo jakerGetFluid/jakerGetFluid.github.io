@@ -318,6 +318,27 @@ body {
           color: $black;
           opacity: 0;
           transition: transform .2s ease, opacity .2s ease;
+          .title {
+            opacity: 0;
+            padding: 5px;
+            color: $black;
+            line-height: 1;
+            background: $white;
+            position: absolute;
+            margin-top: 5px;
+            transition: opacity .2s ease;
+            &::before {
+              content: '';
+              top: -4px;
+              width: 8px;
+              height: 5px;
+              display: block;
+              position: absolute;
+              border-bottom: 5px solid $white;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+            }
+          }
           &.html {
             top: -45px;
             left: 107px;
@@ -463,6 +484,9 @@ body {
             &:hover {
               opacity: 1;
               transform: scale(1.1);
+              .title {
+                opacity: 1;
+              }
             }
           }
         }
