@@ -64,5 +64,10 @@ $('section.samples').waypoint(function(direction) {
     $('section.samples').removeClass('fade-in')
   }
 }, {
-  offset: '20%'
+  offset: '50%'
+});
+
+//samples grid on click expand, show inner
+$('.samples .sample .open-inner').click(function() {
+  $(this).next('.inner').toggleClass('active');
 });

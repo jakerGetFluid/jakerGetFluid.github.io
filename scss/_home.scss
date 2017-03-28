@@ -257,7 +257,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: opacity 1s .5s ease;
+      transition: opacity 1s .25s ease;
       @include breakpoint(medium) {
         .web-container, .icons-container {
           animation: bounce 2s infinite;
@@ -471,17 +471,96 @@ body {
   //SAMPLES
   section.samples {
     position: relative;
-    height: 200vh;
-    @include breakpoint(large) {
-      height: 200vh;
-    }
+    padding: 400px 0 40px;
     .samples-wrap {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      overflow: hidden;
       opacity: 0;
       transition: opacity .5s ease;
+      h2 {
+        margin-bottom: 2rem;
+      }
+      > .row > .column {
+        margin-bottom: 2rem;
+      }
+    }
+    .sample {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      background: {
+        size: cover;
+        position: center center;
+        repeat: no-repeat;
+        color: rgba($white, .25);
+      }
+      opacity: .65;
+      transition: opacity .2s ease;
+      &.cw {
+        background-image: url('/assets/cw.jpg');
+      }
+      &.bsmith {
+        background-image: url('/assets/blacksmith.jpg');
+      }
+      &.maschoff {
+        background-image: url('/assets/mabr.jpg');
+      }
+      &.redd {
+        background-image: url('/assets/redd.jpg');
+      }
+      &.zamp {
+        background-image: url('/assets/zamp.jpg');
+      }
+      &.mc2b {
+        background-image: url('/assets/mc2b2.jpg');
+      }
+      //BUTTON TO REVEAL INNER
+      .open-inner {
+        position: absolute;
+        right: -50px;
+        bottom: 10px;
+        border: 2px solid $black;
+        background: $white;
+        height: 40px;
+        width: 40px;
+        z-index: 100;
+        text-align: center;
+        color: $black;
+        font-size: 3rem;
+        line-height: .8;
+        box-shadow: 3px 3px 0px 0px #000;
+        transition: transform .2s ease, box-shadow .2s ease;
+        &:hover {
+          box-shadow: 6px 6px 0px 0px #000;
+        }
+      }
+      .inner {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba($white, .75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .2s ease, transform .3s ease;
+        * {
+          color: $black;
+        }
+        // when activate inner
+        &.active {
+          transform: translateY(20px);
+          opacity: 1;
+        }
+      }
+      // HOVER STATES
+      &:hover {
+        opacity: 1 !important;
+        .open-inner {
+          transform: translateX(-60px);
+        }
+      }
     }
     // ****
     // FADE TRANSITIONS
