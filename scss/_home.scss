@@ -27,7 +27,6 @@ body {
       width: 100%;
       opacity: .5;
       transform: scaleX(1);
-      animation: static 5s infinite;
       background: {
         image: url('/assets/silhouette-y-outline.png');
         repeat: no-repeat;
@@ -36,6 +35,7 @@ body {
       }
       background-size: 300px auto;
       @include breakpoint(medium) {
+        animation: static 5s infinite;
         background-size: 450px auto;
       }
       @include breakpoint(large) {
