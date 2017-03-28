@@ -499,30 +499,15 @@ body {
     padding: 400px 0 40px;
     .samples-wrap {
       overflow: hidden;
-      opacity: 0;
       transition: opacity .5s ease;
       h2 {
         margin-bottom: 2rem;
       }
+      @include breakpoint(medium) {
+        opacity: 0;
+      }
       > .row > .column {
         margin-bottom: 2rem;
-        //WAYPOINT FADES EACH SAMPLE
-        // &:nth-child(even) {
-        //   .sample {
-        //     top: 25px;
-        //     &.swoop {
-        //       top: 0;
-        //     }
-        //   }
-        // }
-        // &:nth-child(odd) {
-        //   .sample {
-        //     top: 35px;
-        //     &.swoop {
-        //       top: 0;
-        //     }
-        //   }
-        // }
       }
     }
     .sample {
@@ -535,7 +520,9 @@ body {
         repeat: no-repeat;
         color: rgba($white, .25);
       }
-      opacity: 0;
+      @include breakpoint(medium) {
+        opacity: 0;
+      }
       transition: opacity .4s ease, top .4s ease;
       &.cw {
         background-image: url('/assets/cw.jpg');

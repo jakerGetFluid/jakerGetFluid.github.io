@@ -53,56 +53,55 @@ $('section.skillset').waypoint(function(direction) {
   offset: '20%'
 });
 
-//skillset fade out, samples fade in
-$('section.samples').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('section.skillset').removeClass('fade-in');
-    $('section.samples').addClass('fade-in');
-  }
-  else {
-    $('section.skillset').addClass('fade-in');
-    $('section.samples').removeClass('fade-in')
-  }
-}, {
-  offset: '50%'
-});
+if (Foundation.MediaQuery.atLeast('medium')) {
+  //skillset fade out, samples fade in
+  $('section.samples').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('section.skillset').removeClass('fade-in');
+      $('section.samples').addClass('fade-in');
+    }
+    else {
+      $('section.skillset').addClass('fade-in');
+      $('section.samples').removeClass('fade-in')
+    }
+  }, {
+    offset: '50%'
+  });
+  //individual samples fade in - cole west
+  $('.samples-wrap .sample.cw').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').addClass('swoop');
+    }
+    else {
+      $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').removeClass('swoop');
+    }
+  }, {
+    offset: '70%'
+  });
+  //individual samples fade in - maschoff
+  $('.samples-wrap .sample.maschoff').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').addClass('swoop');
+    }
+    else {
+      $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').removeClass('swoop');
+    }
+  }, {
+    offset: '70%'
+  });
 
-
-//individual samples fade in - cole west
-$('.samples-wrap .sample.cw').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').addClass('swoop');
-  }
-  else {
-    $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').removeClass('swoop');
-  }
-}, {
-  offset: '70%'
-});
-
-//individual samples fade in - maschoff
-$('.samples-wrap .sample.maschoff').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').addClass('swoop');
-  }
-  else {
-    $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').removeClass('swoop');
-  }
-}, {
-  offset: '70%'
-});
-
-//individual samples fade in - zamp
-$('.samples-wrap .sample.zamp').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').addClass('swoop');
-  }
-  else {
-    $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').removeClass('swoop');
-  }
-}, {
-  offset: '70%'
-});
+  //individual samples fade in - zamp
+  $('.samples-wrap .sample.zamp').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').addClass('swoop');
+    }
+    else {
+      $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').removeClass('swoop');
+    }
+  }, {
+    offset: '70%'
+  });
+}
 
 //samples grid on click expand, show inner
 $('.samples .sample .open-inner').click(function() {
