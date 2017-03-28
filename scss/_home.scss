@@ -257,7 +257,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: opacity 1s .25s ease;
+      transition: opacity .5s ease;
       @include breakpoint(medium) {
         .web-container, .icons-container {
           animation: bounce 2s infinite;
@@ -456,6 +456,7 @@ body {
       transition: opacity 1s ease;
       .skill-web {
         opacity: 1;
+        transition: opacity 1s .25s ease;
         .icons-container {
           > div {
             opacity: .75;
@@ -481,6 +482,23 @@ body {
       }
       > .row > .column {
         margin-bottom: 2rem;
+        //WAYPOINT FADES EACH SAMPLE
+        // &:nth-child(even) {
+        //   .sample {
+        //     top: 25px;
+        //     &.swoop {
+        //       top: 0;
+        //     }
+        //   }
+        // }
+        // &:nth-child(odd) {
+        //   .sample {
+        //     top: 35px;
+        //     &.swoop {
+        //       top: 0;
+        //     }
+        //   }
+        // }
       }
     }
     .sample {
@@ -493,8 +511,8 @@ body {
         repeat: no-repeat;
         color: rgba($white, .25);
       }
-      opacity: .65;
-      transition: opacity .2s ease;
+      opacity: 0;
+      transition: opacity .4s ease, top .4s ease;
       &.cw {
         background-image: url('/assets/cw.jpg');
       }
@@ -512,6 +530,16 @@ body {
       }
       &.mc2b {
         background-image: url('/assets/mc2b2.jpg');
+      }
+      &.swoop {
+        opacity: .65;
+        // HOVER STATES
+        &:hover {
+          opacity: 1 !important;
+          .open-inner {
+            transform: translateX(-60px);
+          }
+        }
       }
       //BUTTON TO REVEAL INNER
       .open-inner {
@@ -554,13 +582,6 @@ body {
           opacity: 1;
         }
       }
-      // HOVER STATES
-      &:hover {
-        opacity: 1 !important;
-        .open-inner {
-          transform: translateX(-60px);
-        }
-      }
     }
     // ****
     // FADE TRANSITIONS
@@ -568,7 +589,7 @@ body {
     &.fade-in {
       .samples-wrap {
         opacity: 1;
-        transition: opacity 1s 1s ease;
+        transition: opacity 1s ease;
       }
     }
   }
