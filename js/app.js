@@ -24,20 +24,6 @@ $('.ss').click(function() {
 //fade title in/ out
 $('.hero .title').headroom();
 
-//about fade out, skillset fade in
-$('section.skillset').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('section.about').removeClass('fade-in');
-    $('section.skillset').addClass('fade-in');
-  }
-  else {
-    $('section.about').addClass('fade-in');
-    $('section.skillset').removeClass('fade-in')
-  }
-}, {
-  offset: '20%'
-});
-
 if (Foundation.MediaQuery.atLeast('medium')) {
   // waypoints fades
   // hero section fade out, about fade in
@@ -49,6 +35,19 @@ if (Foundation.MediaQuery.atLeast('medium')) {
     else {
       $('.hero').removeClass('fade-out');
       $('section.about').removeClass('fade-in');
+    }
+  }, {
+    offset: '20%'
+  });
+  //about fade out, skillset fade in
+  $('section.skillset').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('section.about').removeClass('fade-in');
+      $('section.skillset').addClass('fade-in');
+    }
+    else {
+      $('section.about').addClass('fade-in');
+      $('section.skillset').removeClass('fade-in')
     }
   }, {
     offset: '20%'

@@ -20,7 +20,7 @@ body {
     // BACKGROUND-IMAGE WITH FLICKER
     &::after {
       content: '';
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       height: 100%;
@@ -34,6 +34,7 @@ body {
       opacity: 1;
       background-size: 300px auto;
       @include breakpoint(medium) {
+        position: fixed;
         opacity: .5;
         transform: scaleX(1);
         animation: static 5s infinite;
@@ -113,11 +114,8 @@ body {
   //ABOUT
   section.about {
     position: relative;
-    @include breakpoint(small only) {
-      background: $black;
-    }
-    height: 200vh;
-    @include breakpoint(large) {
+    height: 100vh;
+    @include breakpoint(medium) {
       height: 200vh;
     }
     // WRAP FOR TEXT AND TITLE
@@ -135,16 +133,16 @@ body {
       @include breakpoint(medium) {
         position: fixed;
         right: -100%;
-      }
-      h2, p {
-        position: relative;
-        right: -50px;
-        opacity: 0;
+        h2, p {
+          position: relative;
+          right: -50px;
+          opacity: 0;
+          transition: transform .4s ease, opacity .2s ease;
+        }
       }
       h2 {
         font-size: 3rem;
         line-height: 1;
-        transition: transform .4s ease, opacity .2s ease;
         @include breakpoint(medium) {
           font-size: 6rem;
           line-height: 1.2;
@@ -168,6 +166,11 @@ body {
     // TEXT
     .top-wrap {
       bottom: -1px;
+      @include breakpoint(small only) {
+        height: 400px;
+        width: 98%;
+        padding: 1rem 1rem 0 1rem;
+      }
       @include breakpoint(medium) {
         right: -50px;
         transition: right .5s .6s linear, height .4s ease;
@@ -181,6 +184,11 @@ body {
     //TITLE
     .btm-wrap {
       top: -1px;
+      @include breakpoint(small only) {
+        height: 70px;
+        width: 98%;
+        padding: .5rem 1rem .5rem 1rem;
+      }
       @include breakpoint(medium) {
         right: -50px;
         transition: right .5s .6s linear, height .4s ease;
@@ -211,9 +219,6 @@ body {
       }
       //TEXT
       .top-wrap {
-        height: 400px;
-        width: 98%;
-        padding: 1rem 1rem 0 1rem;
         @include breakpoint(medium) {
           height: 375px;
           width: 83%;
@@ -238,9 +243,6 @@ body {
       }
       // TITLE
       .btm-wrap {
-        height: 70px;
-        width: 98%;
-        padding: .5rem 1rem .5rem 1rem;
         @include breakpoint(medium) {
           height: 200px;
           width: 90%;
@@ -268,15 +270,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200vh;
+    height: 100vh;
     .skill-web {
-      opacity: 0;
-      position: fixed;
+      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: opacity .5s ease;
       @include breakpoint(medium) {
+        position: fixed;
+        opacity: 0;
+        transition: opacity .5s ease;
         .web-container, .icons-container {
           animation: bounce 2s infinite;
         }
@@ -318,11 +321,14 @@ body {
       }
       // POSITION ICON CONTAINER OVER WEB GRAPHIC
       .icons-container {
-        position: fixed;
+        position: absolute;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
+        @include breakpoint(medium) {
+          position: fixed;
+        }
         //*****
         //SKILLSET ICONS
         //*****
@@ -334,8 +340,10 @@ body {
           background-color: $white;
           border-radius: 50%;
           color: $black;
-          opacity: 0;
-          transition: transform .2s ease, opacity .2s ease;
+          @include breakpoint(medium) {
+            opacity: 0;
+            transition: transform .2s ease, opacity .2s ease;
+          }
           .title {
             opacity: 0;
             padding: 5px;
@@ -368,10 +376,6 @@ body {
               top: -27px;
               left: 344px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: -40px;
-            //   left: 393px;
-            // }
           }
           &.wordpress {
             top: 88px;
@@ -384,10 +388,6 @@ body {
               top: 301px;
               right: -10px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 323px;
-            //   right: 9px;
-            // }
           }
           &.scss {
             top: -14px;
@@ -400,10 +400,6 @@ body {
               top: 19px;
               left: 196px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 23px;
-            //   left: 228px;
-            // }
           }
           &.php {
             top: 20px;
@@ -416,10 +412,6 @@ body {
               top: 105px;
               left: -21px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 111px;
-            //   left: 0px;
-            // }
           }
           &.javascript {
             top: 95px;
@@ -432,10 +424,6 @@ body {
               top: 299px;
               left: 4px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 317px;
-            //   left: 27px;
-            // }
           }
           &.jquery {
             top: 140px;
@@ -448,10 +436,6 @@ body {
               top: 359px;
               left: 90px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 390px;
-            //   left: 141px;
-            // }
           }
           &.illustrator {
             top: -6px;
@@ -464,10 +448,6 @@ body {
               top: 30px;
               right: 93px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 39px;
-            //   right: 117px;
-            // }
           }
           &.photoshop {
             top: 48px;
@@ -480,10 +460,6 @@ body {
               top: 128px;
               right: 104px;
             }
-            // @include breakpoint(xxlarge) {
-            //   top: 136px;
-            //   right: 149px;
-            // }
           }
         }
       }
