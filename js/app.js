@@ -24,21 +24,6 @@ $('.ss').click(function() {
 //fade title in/ out
 $('.hero .title').headroom();
 
-// waypoints fades
-// hero section fade out, about fade in
-$('section.about').waypoint(function(direction) {
-  if (direction == 'down') {
-    $('.hero').addClass('fade-out');
-    $('section.about').addClass('fade-in');
-  }
-  else {
-    $('.hero').removeClass('fade-out');
-    $('section.about').removeClass('fade-in');
-  }
-}, {
-  offset: '20%'
-});
-
 //about fade out, skillset fade in
 $('section.skillset').waypoint(function(direction) {
   if (direction == 'down') {
@@ -54,6 +39,20 @@ $('section.skillset').waypoint(function(direction) {
 });
 
 if (Foundation.MediaQuery.atLeast('medium')) {
+  // waypoints fades
+  // hero section fade out, about fade in
+  $('section.about').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.hero').addClass('fade-out');
+      $('section.about').addClass('fade-in');
+    }
+    else {
+      $('.hero').removeClass('fade-out');
+      $('section.about').removeClass('fade-in');
+    }
+  }, {
+    offset: '20%'
+  });
   //skillset fade out, samples fade in
   $('section.samples').waypoint(function(direction) {
     if (direction == 'down') {
@@ -106,4 +105,5 @@ if (Foundation.MediaQuery.atLeast('medium')) {
 //samples grid on click expand, show inner
 $('.samples .sample .open-inner').click(function() {
   $(this).next('.inner').toggleClass('active');
+  $(this).toggleClass('active');
 });
