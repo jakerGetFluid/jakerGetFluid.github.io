@@ -30,9 +30,11 @@ body {
         repeat: no-repeat;
         attachment: fixed;
         position: center center;
+        size: 300px auto;
       }
-      opacity: 1;
-      background-size: 300px auto;
+      @include breakpoint(small only) {
+        opacity: 1 !important;
+      }
       @include breakpoint(medium) {
         position: fixed;
         opacity: .5;
@@ -498,7 +500,17 @@ body {
       overflow: hidden;
       transition: opacity 1s ease;
       h2 {
-        margin-bottom: 2rem;
+        margin: 2rem 0rem 6rem 0rem;
+        &::after {
+          content: '';
+          position: relative;
+          top: 10px;
+          display: block;
+          width: 0;
+          height: 5px;
+          background-color: $white;
+          transition: width .5s .5s ease;
+        }
       }
       @include breakpoint(medium) {
         opacity: 0;
@@ -509,7 +521,7 @@ body {
     }
     .sample {
       position: relative;
-      height: 400px;
+      height: 300px;
       overflow: hidden;
       background: {
         size: cover;
@@ -623,6 +635,87 @@ body {
       .samples-wrap {
         opacity: 1;
         transition: opacity 1s ease;
+        h2 {
+          &::after {
+            width: calc(50% - .9375rem);
+          }
+        }
+      }
+    }
+  }
+  //RESUME
+  section.resume {
+    padding: 200px 0;
+    h2 {
+      margin: 2rem 0rem 6rem 0rem;
+      &::after {
+        content: '';
+        position: relative;
+        top: 10px;
+        display: block;
+        width: 0;
+        height: 5px;
+        right: 0;
+        background-color: $white;
+        transition: width .5s ease;
+      }
+    }
+    .snapshot {
+      position: relative;
+      overflow: hidden;
+      &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0px -25px 20px -10px $black;
+      }
+      img {
+        position: relative;
+        top: 100px;
+        opacity: 0;
+        transition: transform .5s .2s ease, opacity .3s .2s ease;
+      }
+      a.resume-link {
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+        border: 2px solid $black;
+        background: $white;
+        height: 40px;
+        width: 40px;
+        z-index: 100;
+        font-size: 3rem;
+        line-height: .75;
+        box-shadow: 3px 3px 0px 0px $black;
+        transition: box-shadow .2s ease;
+        color: $black;
+        &:hover {
+          box-shadow: 6px 6px 0px 0px $black;
+        }
+      }
+      &:hover {
+        img {
+          transform: translateY(-100px) !important;
+        }
+      }
+    }
+    // ****
+    // FADE TRANSITIONS
+    // ****
+    &.fade-in {
+      h2 {
+        &::after {
+          width: calc(50% - .9375rem);
+        }
+      }
+      .snapshot {
+        img {
+          opacity: 1;
+          transform: translateY(-80px);
+        }
       }
     }
   }

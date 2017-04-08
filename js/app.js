@@ -63,7 +63,7 @@ if (Foundation.MediaQuery.atLeast('medium')) {
       $('section.samples').removeClass('fade-in')
     }
   }, {
-    offset: '50%'
+    offset: '40%'
   });
   //individual samples fade in - cole west
   $('.samples-wrap .sample.cw').waypoint(function(direction) {
@@ -98,6 +98,18 @@ if (Foundation.MediaQuery.atLeast('medium')) {
     }
   }, {
     offset: '70%'
+  });
+
+  //resume fade in
+  $('section.resume').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('section.resume').addClass('fade-in');
+    }
+    else {
+      $('section.resume').removeClass('fade-in');
+    }
+  }, {
+    offset: '15%'
   });
 }
 
