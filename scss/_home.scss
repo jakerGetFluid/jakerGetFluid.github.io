@@ -495,7 +495,10 @@ body {
   //SAMPLES
   section.samples {
     position: relative;
-    padding: 400px 0 40px;
+    padding: 40px 0;
+    @include breakpoint(medium) {
+      padding: 400px 0 40px;
+    }
     .samples-wrap {
       overflow: hidden;
       transition: opacity 1s ease;
@@ -506,10 +509,15 @@ body {
           position: relative;
           top: 10px;
           display: block;
-          width: 0;
           height: 5px;
           background-color: $white;
           transition: width .5s .5s ease;
+          @include breakpoint(small only) {
+            width: calc(50% - .9375rem);
+          }
+          @include breakpoint(medium) {
+            width: 0;
+          }
         }
       }
       @include breakpoint(medium) {
@@ -645,7 +653,10 @@ body {
   }
   //RESUME
   section.resume {
-    padding: 200px 0;
+    padding: 100px 0;
+    @include breakpoint(medium) {
+      padding: 200px 0;
+    }
     h2 {
       margin: 2rem 0rem 6rem 0rem;
       &::after {
@@ -653,11 +664,16 @@ body {
         position: relative;
         top: 10px;
         display: block;
-        width: 0;
         height: 5px;
         right: 0;
         background-color: $white;
         transition: width .5s ease;
+        @include breakpoint(small only) {
+          width: calc(50% - .9375rem);
+        }
+        @include breakpoint(medium) {
+          width: 0;
+        }
       }
     }
     .snapshot {
@@ -668,37 +684,58 @@ body {
         content: '';
         height: 100%;
         width: 100%;
-        top: 0;
+        top: 1px;
         left: 0;
         box-shadow: inset 0px -25px 20px -10px $black;
       }
       img {
         position: relative;
-        top: 100px;
-        opacity: 0;
-        transition: transform .5s .2s ease, opacity .3s .2s ease;
+        top: -1px;
+        @include breakpoint(medium) {
+          top: 100px;
+          opacity: 0;
+          transition: transform .5s .2s ease, opacity .3s .2s ease;
+        }
       }
       a.resume-link {
         position: absolute;
-        bottom: 20px;
-        right: 10px;
         border: 2px solid $black;
         background: $white;
-        height: 40px;
-        width: 40px;
+        // height: 40px;
+        // width: 40px;
         z-index: 100;
-        font-size: 3rem;
-        line-height: .75;
+        font-size: 1.5rem;
+        padding: 0 1rem;
         box-shadow: 3px 3px 0px 0px $black;
         transition: box-shadow .2s ease;
+        overflow: hidden;
         color: $black;
+        @include breakpoint(small only) {
+          bottom: 0;
+          left: 0;
+        }
+        @include breakpoint(medium) {
+          bottom: 30px;
+          right: 15px;
+        }
+        &::after {
+          content:'+';
+          position: absolute;
+          right: -1px;
+          top: 0;
+          line-height: .5;
+          font-size: 3rem;
+          color: $yellow;
+        }
         &:hover {
           box-shadow: 6px 6px 0px 0px $black;
         }
       }
-      &:hover {
-        img {
-          transform: translateY(-100px) !important;
+      @include breakpoint(medium) {
+        &:hover {
+          img {
+            transform: translateY(-100px) !important;
+          }
         }
       }
     }
