@@ -39,7 +39,7 @@ body {
         position: fixed;
         opacity: .5;
         transform: scaleX(1);
-        animation: static 5s infinite;
+        // animation: static 5s infinite;
         background-size: 450px auto;
       }
       @include breakpoint(large) {
