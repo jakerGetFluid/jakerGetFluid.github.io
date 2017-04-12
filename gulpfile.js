@@ -1,6 +1,11 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
 var watch = require('gulp-watch');
+//minify js
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+// minify css
+var cleanCSS = require('gulp-clean-css');
 
 var sassPaths = [
   'bower_components/normalize.scss/sass',
@@ -25,4 +30,22 @@ gulp.task('watch', function () {
   gulp.watch('scss/*.scss', ['sass']);
 });
 
-gulp.task('default', ['sass', 'watch']);
+//minify js into dist folder
+gulp.task('compressJs', function (cb) {
+  pump([
+        gulp.src('js/*.js'),
+        uglify(),
+        gulp.dest('dist')
+    ],
+    cb
+  );
+});
+
+//minify css into dist folder
+gulp.task('compressCss', function () {
+  return gulp.src('css/*.css')
+  .pipe(cleanCSS({compatibility: 'ie8'}))
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['sass', 'watch', 'compressJs', 'compressCss']);
