@@ -756,4 +756,50 @@ body {
       }
     }
   }
+  // OUTRO
+  section.outro {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    .mountain {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      display: flex;
+      align-items: flex-end;
+      &.left {
+        left: -100px;
+        width: 72%;
+        z-index: 1;
+        img {
+          position: relative;
+          bottom: -14px;
+        }
+        transition: transform .6s ease;
+      }
+      &.right {
+        right: -100px;
+        width: 75%;
+        transition: transform .8s ease;
+      }
+    }
+    &.fade-in {
+      .left {
+        transform: translateX(100px);
+      }
+      .right {
+        transform: translateX(-100px);
+      }
+    }
+  }
+  // FOOTER
+  footer {
+    position: relative;
+    padding: rem-calc(50 0);
+    z-index: 1;
+    background: #fff;
+    * {
+      color: $black;
+    }
+  }
 }

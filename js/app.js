@@ -111,6 +111,19 @@ if (Foundation.MediaQuery.atLeast('medium')) {
   }, {
     offset: '15%'
   });
+
+  // outro fades in
+  //resume fade in
+  $('section.outro').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('section.outro').addClass('fade-in');
+    }
+    else {
+      $('section.outro').removeClass('fade-in');
+    }
+  }, {
+    offset: '40%'
+  });
 }
 
 //samples grid on click expand, show inner
