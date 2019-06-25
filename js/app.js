@@ -65,40 +65,41 @@ if (Foundation.MediaQuery.atLeast('medium')) {
   }, {
     offset: '40%'
   });
-  //individual samples fade in - cole west
-  $('.samples-wrap .sample.cw').waypoint(function(direction) {
-    if (direction == 'down') {
-      $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').addClass('swoop');
-    }
-    else {
-      $('.samples-wrap .sample.cw, .samples-wrap .sample.bsmith').removeClass('swoop');
-    }
-  }, {
-    offset: '70%'
-  });
-  //individual samples fade in - maschoff
-  $('.samples-wrap .sample.maschoff').waypoint(function(direction) {
-    if (direction == 'down') {
-      $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').addClass('swoop');
-    }
-    else {
-      $('.samples-wrap .sample.maschoff, .samples-wrap .sample.redd').removeClass('swoop');
-    }
-  }, {
-    offset: '70%'
-  });
 
-  //individual samples fade in - zamp
-  $('.samples-wrap .sample.zamp').waypoint(function(direction) {
+  //individual samples fade in - veggie tracker
+  $('.samples-wrap .sample.vt').waypoint(function(direction) {
     if (direction == 'down') {
-      $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').addClass('swoop');
+      $('.samples-wrap .sample.vt, .samples-wrap .sample.bm').addClass('swoop');
     }
     else {
-      $('.samples-wrap .sample.zamp, .samples-wrap .sample.mc2b').removeClass('swoop');
+      $('.samples-wrap .sample.vt, .samples-wrap .sample.bm').removeClass('swoop');
     }
   }, {
     offset: '70%'
   });
+  //individual samples fade in - cultureiq
+  $('.samples-wrap .sample.js').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.samples-wrap .sample.js, .samples-wrap .sample.ciq').addClass('swoop');
+    }
+    else {
+      $('.samples-wrap .sample.js, .samples-wrap .sample.ciq').removeClass('swoop');
+    }
+  }, {
+    offset: '70%'
+  });
+  //individual samples fade in - cole west
+  $('.samples-wrap .sample.skyward').waypoint(function(direction) {
+    if (direction == 'down') {
+      $('.samples-wrap .sample.skyward, .samples-wrap .sample.bpa').addClass('swoop');
+    }
+    else {
+      $('.samples-wrap .sample.skyward, .samples-wrap .sample.bpa').removeClass('swoop');
+    }
+  }, {
+    offset: '70%'
+  });
+  
 
   //resume fade in
   $('section.resume').waypoint(function(direction) {

@@ -543,23 +543,23 @@ body {
         opacity: 0;
       }
       transition: opacity .4s ease, top .4s ease;
-      &.cw {
-        background-image: url('/assets/cw.jpg');
+      &.vt  {
+        background-image: url('/assets/veggie-tracker-screenshot.jpg');
       }
-      &.bsmith {
-        background-image: url('/assets/blacksmith.jpg');
+      &.bm  {
+        background-image: url('/assets/basics-screenshot.png');
       }
-      &.maschoff {
-        background-image: url('/assets/mabr.jpg');
+      &.ciq {
+        background-image: url('/assets/ciq-screenshot.png');
       }
-      &.redd {
-        background-image: url('/assets/redd.jpg');
+      &.js {
+        background-image: url('/assets/js-screenshot.png');
       }
-      &.zamp {
-        background-image: url('/assets/zamp.jpg');
+      &.skyward {
+        background-image: url(/assets/skyward-screenshot.png);
       }
-      &.mc2b {
-        background-image: url('/assets/mc2b2.jpg');
+      &.bpa {
+        background-image: url(/assets/bpa-screenshot.png);
       }
       &.swoop {
         opacity: .65;
