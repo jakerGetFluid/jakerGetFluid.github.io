@@ -72,6 +72,21 @@ header {
             }
           }
         }
+        &.social {
+          margin-top: 1rem;
+          a {
+            display: inline-block;
+            max-width: 32px;
+            max-height: 32px;
+            transition: opacity .1s linear;
+            &::after {
+              display: none;
+            }
+            &:hover {
+              opacity: .7;
+            }
+          }
+        }
       }
     }
   }
